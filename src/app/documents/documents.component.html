@@ -1,10 +1,18 @@
-<h1>{{pageTitle}}</h1>
-<!--*ngFor for döngüsünü oluşturur doc ise x y z gibi herhangi bir değer olabilir yani iteration variable dır -->
-<div *ngFor="let doc of documents">
-	<h3>{{doc.title}}</h3>
-	<em>{{doc.description}}</em>
-	<a href="{{doc.file_url}}">File Url</a>
-	<p>{{doc.updated_at}}</p>
-	<p>{{doc.image_url}}</p> 
+<body>
 
+
+<h1 class = "headline">{{pageTitle}}</h1>
+<!--*ngFor for döngüsünü oluşturur doc ise x y z gibi herhangi bir değer olabilir yani iteration variable dır -->
+<div class="card" style="width: 18rem;" *ngFor="let doc of documents">
+	<img class="card-img-top" src= "{{doc.image_url}}" alt="Card image cap" width="100%">
+	<div class="card-body">
+		<h5 class="card-title">{{doc.title}}</h5>
+		 
+		<p class="card-text">{{doc.description}}</p>
+		 
+		<a href="{{doc.file_url}}" class="btn btn-outline-success my-2 my-sm-0">Download</a>
+		<p class= "card-text"> <small class = "text-muted">Updated At: {{doc.updated_at}} </small>  </p>	 
+	</div>
 </div>
+</body>
+ 
