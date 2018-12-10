@@ -5,6 +5,9 @@
  .nav-link.active{
   color: lightgreen;
 }
+ .nav-link:hover{
+  color: lightgreen;
+}
 .nav-link{
   color: green;
 }
@@ -15,8 +18,17 @@
 .dropdown-item.active{
   color: lightgreen;
 }
+.dropdown-item:hover{
+  color: lightgreen;
+}
 
 .dropdown-menu{
   background-color: #313239ff;
 }
+.btn:hover{
+	color: #313239ff;
+} 
+.btn:focus{
+	color: #313239ff;
+} 
 
