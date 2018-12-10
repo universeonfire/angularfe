@@ -1,0 +1,10 @@
+<h1>{{pageTitle}}</h1>
+<!--*ngFor for döngüsünü oluşturur doc ise x y z gibi herhangi bir değer olabilir yani iteration variable dır -->
+<div *ngFor="let doc of documents">
+	<h3>{{doc.title}}</h3>
+	<em>{{doc.description}}</em>
+	<a href="{{doc.file_url}}">File Url</a>
+	<p>{{doc.updated_at}}</p>
+	<p>{{doc.image_url}}</p> 
+
+</div>

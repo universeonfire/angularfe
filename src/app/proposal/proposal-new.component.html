@@ -1,0 +1,101 @@
+<h1>Create a Proposal</h1>
+<div>
+	<form #proposalForm = 'ngForm'>
+		<div class = "form-group">
+			<label for = "customer">Customer Name</label>
+			<input type="text"
+				id = "customer"
+				placeholder="Company Name"
+				required
+				name = "customer" 
+				#customer= "ngModel"
+				[(ngModel)]="proposal.customer"	
+			>
+			<div [hidden]="customer.valid || customer.pristine">
+				Customer name is required!
+			</div>
+		</div>
+		<div class = "form-group">
+			<label for = "tools">Tools</label>
+			<input type="text"
+				id = "tools"
+				placeholder="Technologies that you are going to use"
+				required
+				name = "tools" 
+				#tools= "ngModel"
+				[(ngModel)]="proposal.tools"	
+			>
+			<div [hidden]="tools.valid || tools.pristine">
+				Tools are required!
+			</div>
+		</div>
+		<div class = "form-group">
+			<label for = "estimated_hours">Estimated Hours</label>
+			<input type="number"
+				id = "estimated_hours"
+				placeholder="How much time?"
+				required
+				name = "estimated_hours" 
+				#estimated_hours= "ngModel"
+				[(ngModel)]="proposal.estimated_hours"	
+			>
+			<div [hidden]="estimated_hours.valid || estimated_hours.pristine">
+				Hours is required!
+			</div>
+		</div>
+		<div class = "form-group">
+			<label for = "hourly_rate">Hourly Rate($)</label>
+			<input type="number"
+				id = "hourly_rate"
+				placeholder="How much money?"
+				required
+				name = "hourly_rate" 
+				#hourly_rate= "ngModel"
+				[(ngModel)]="proposal.hourly_rate"	
+			>
+			<div [hidden]="hourly_rate.valid || hourly_rate.pristine">
+				Rate is required!
+			</div>
+		</div>
+		<div class = "form-group">
+			<label for = "weeks_to_complete">Weeks to Complete</label>
+			<input type="number"
+				id = "weeks_to_complete"
+				placeholder="How many weeks?"
+				required
+				name = "weeks_to_complete" 
+				#weeks_to_complete= "ngModel"
+				[(ngModel)]="proposal.weeks_to_complete"	
+			>
+			<div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine">
+				Weeks are required!
+			</div>
+		</div>
+		<div class = "form-group">
+			<label for = "portfolio_url">Porfolio</label>
+			<input type="text"
+				id = "portfolio_url"
+				required
+				name = "portfolio_url" 
+				#portfolio_url= "ngModel"
+				[(ngModel)]="proposal.portfolio_url"	
+			>
+			<div [hidden]="portfolio_url.valid || portfolio_url.pristine">
+				Portfolio Url  is required!
+			</div>
+		</div>
+		<div class = "form-group">
+			<label for = "client_email">Client Email(Optional)</label>
+			<input type="text"
+				id = "client_email"
+				placeholder="someone@somemail.com"
+				required
+				name = "client_email" 
+				#client_email= "ngModel"
+				[(ngModel)]="proposal.client_email"	
+			>
+		</div>
+	</form>
+</div>
+
+	 
