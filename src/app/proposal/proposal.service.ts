@@ -8,16 +8,20 @@ import  { Proposal } from "./proposal";
 @Injectable()
 
 export class ProposalService{
-	private proposalsUrl = "http://localhost:3001/proposals.json";
+	private proposalsUrl = "http://localhost:3001/proposals";
 
 	constructor (
 		private http: Http
 	){}
-
+	/* proposal list sayfası için oluşturulan fonksiyon */
 	getProposals(): Observable<Proposal[]> {
 		return this.http.get(this.proposalsUrl)
 						.pipe(map((response: Response) => <Proposal[]>response.json()));
 
+	}
+    /* proposal show sayfası için oluştturulan fonksiyon */
+	getProposal(id:number){
+		return this.http.get(this.proposalsUrl + "/" + id + ".json");
 	}
 
 	private handleError (error: Response | any) {
