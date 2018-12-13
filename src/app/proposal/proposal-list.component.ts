@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, throwError, timer } from 'rxjs';
 import { map, catchError, timeInterval } from 'rxjs/operators';
 import { Proposal } from './proposal'; 
@@ -18,7 +19,8 @@ export class ProposalListComponent implements OnInit {
 	mode = "Observable";
 
 	constructor(
-		private ProposalService: ProposalService
+		private ProposalService: ProposalService,
+		private router: Router,
 	){}
 
 	ngOnInit(){
@@ -35,8 +37,12 @@ export class ProposalListComponent implements OnInit {
 				error => this.errorMessage = <any>error
 			);
 	}		
+	/* dinamik link oluşturma */
+	goToShow(proposal: Proposal): void {
+		let link = ["/proposal", proposal.id];
+		this.router.navigate(link);
 
-	
+	}
 }
 
  
