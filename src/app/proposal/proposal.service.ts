@@ -23,6 +23,13 @@ export class ProposalService{
 	getProposal(id:number){
 		return this.http.get(this.proposalsUrl + "/" + id + ".json");
 	}
+	/* proposal oluşturma */
+	createProposal(proposal){
+		let headers = new Headers({'Content-Type':'application/json'});
+		let options = new RequestOptions({headers: headers});
+		return this.http.post(this.proposalsUrl, JSON.stringify(proposal), {headers: headers})
+						.pipe(map((res: Response) => res.json()));
+	}
 
 	private handleError (error: Response | any) {
 		let errMsg: string;
