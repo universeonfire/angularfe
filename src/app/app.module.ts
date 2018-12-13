@@ -14,6 +14,7 @@ import { DocumentService } from './documents/document.service';
 import { ProposalListComponent } from './proposal/proposal-list.component';
 import { ProposalNewContent } from './proposal/proposal-new.component';
 import { ProposalShowComponent } from './proposal/proposal-show.component';
+import { ProposalService } from './proposal/proposal.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProposalShowComponent } from './proposal/proposal-show.component';
   ],
   providers: [
     DocumentService,
+    ProposalService,
   ],
   bootstrap: [AppComponent]
 })
